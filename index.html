@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拉屎按钮</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #poopButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #poopButton:hover {
+            background-color: #A0522D;
+        }
+        #poopImage {
+            margin-top: 20px;
+            max-width: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>点击下方按钮</h1>
+    <button id="poopButton">拉屎</button>
+    <br>
+    <img id="poopImage" src="a.png" alt="拉屎图片">
+    
+    <audio id="poopSound" src="b.mp3"></audio>
+
+    <script>
+        document.getElementById('poopButton').addEventListener('click', function() {
+            // 显示图片
+            document.getElementById('poopImage').style.display = 'block';
+            
+            // 播放声音
+            var sound = document.getElementById('poopSound');
+            sound.currentTime = 0; // 重置音频到开始
+            sound.play();
+            
+            // 按钮动画效果
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
